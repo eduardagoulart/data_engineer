@@ -2,6 +2,8 @@ import pandas as pd
 import sqlite3
 
 df = pd.read_csv('finalapi.csv')
+conn = sqlite3.connect('finalapi.db')
+c = conn.cursor()
 
 
 def check_nan(query):
@@ -9,10 +11,11 @@ def check_nan(query):
 
 
 def create_sql():
-    types_query = [type(df_serie[0]) for df_serie in df]
     if check_nan(df) != 0:
         df.fillna(0)
-    
+
+    df.to_sql('Insurance', conn, if_exists='append', index=False)
 
 
-create_sql()
+if '__main__' == __name__:
+    create_sql()
