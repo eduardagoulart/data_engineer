@@ -1,8 +1,8 @@
-import pandas as pd
 import sqlite3
+import pandas as pd
 
 df = pd.read_csv('finalapi.csv')
-conn = sqlite3.connect('finalapi.db')
+conn = sqlite3.connect('finalapi.sqlite3')
 c = conn.cursor()
 
 
@@ -13,10 +13,8 @@ def check_nan(query):
 def create_sql():
     if check_nan(df) != 0:
         df.fillna(0)
-    summarize = df.describe()
 
-    df.to_sql('Insurance', conn, if_exists='append', index=False)
-    summarize.to_sql('SummarizedViews', conn, if_exists='append', index=False)
+    df.to_sql('core_insurance', conn, if_exists='append', index=False)
 
 
 if '__main__' == __name__:
