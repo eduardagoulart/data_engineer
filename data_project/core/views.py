@@ -22,7 +22,15 @@ class PurchaseList(generics.ListAPIView):
         by filtering against a `username` query parameter in the URL.
         """
         queryset = Insurance.objects.all()
-        username = self.request.query_params.get('state_abbr', None)
-        if username is not None:
-            queryset = queryset.filter(months=username)
+        generic_request = self.request.query_params.get(list(self.request.query_params.keys())[0], None)
+
+        if generic_request is not None:
+            if list(self.request.query_params.keys())[0] == 'months':
+                queryset = queryset.filter(months=generic_request)
+            elif list(self.request.query_params.keys())[0] == 'state_abbr':
+                queryset = queryset.filter(state_abbr=generic_request)
+            elif list(self.request.query_params.keys())[0] == 'agency_id':
+                queryset = queryset.filter(agency_id=generic_request)
+            elif list(self.request.query_params.keys())[0] == 'stat_profile_date_year':
+                queryset = queryset.filter(stat_profile_date_year=generic_request)
         return queryset
