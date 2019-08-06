@@ -2,13 +2,34 @@ from rest_framework import generics
 from rest_framework import viewsets
 from rest_pandas import PandasView, PandasCSVRenderer
 
-from data_project.core.models import Insurance
-from data_project.core.serializers import InsuranceSerializer
+from data_project.core.models import Insurance, Months, Year, AgencyId, State
+from data_project.core.serializers import InsuranceSerializer, MonthsSerializer, YearSerializer, AgencyIdSerializer, \
+    StateSerializer
 
 
 class InsuranceViewSet(viewsets.ModelViewSet):
     queryset = Insurance.objects.all()
     serializer_class = InsuranceSerializer
+
+
+class MonthsViewSet(viewsets.ModelViewSet):
+    queryset = Months.objects.all()
+    serializer_class = MonthsSerializer
+
+
+class YearViewSet(viewsets.ModelViewSet):
+    queryset = Year.objects.all()
+    serializer_class = YearSerializer
+
+
+class AgencyIdViewSet(viewsets.ModelViewSet):
+    queryset = AgencyId.objects.all()
+    serializer_class = AgencyIdSerializer
+
+
+class StateViewSet(viewsets.ModelViewSet):
+    queryset = State.objects.all()
+    serializer_class = StateSerializer
 
 
 class PurchaseList(generics.ListAPIView):
