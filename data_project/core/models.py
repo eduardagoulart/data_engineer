@@ -83,4 +83,49 @@ class Insurance(models.Model):
                                                 null=True)  # Field name made lowercase.
 
     def __str__(self):
-        return self.vendor
+        return self.prod_line
+
+
+class Months(models.Model):
+    prd_ernd_prem_amt = models.FloatField(db_column='PRD_ERND_PREM_AMT', blank=True,
+                                          null=True)  # Field name made lowercase.
+    prd_incrd_losses_amt = models.FloatField(db_column='PRD_INCRD_LOSSES_AMT', blank=True,
+                                             null=True)  # Field name made lowercase.
+    months = models.IntegerField(db_column='MONTHS', blank=True, null=True)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.months
+
+
+class State(models.Model):
+    prd_ernd_prem_amt = models.FloatField(db_column='PRD_ERND_PREM_AMT', blank=True,
+                                          null=True)  # Field name made lowercase.
+    prd_incrd_losses_amt = models.FloatField(db_column='PRD_INCRD_LOSSES_AMT', blank=True,
+                                             null=True)  # Field name made lowercase.
+    state_abbr = models.TextField(db_column='STATE_ABBR', blank=True, null=True)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.state_abbr
+
+
+class AgencyId(models.Model):
+    prd_ernd_prem_amt = models.FloatField(db_column='PRD_ERND_PREM_AMT', blank=True,
+                                          null=True)  # Field name made lowercase.
+    prd_incrd_losses_amt = models.FloatField(db_column='PRD_INCRD_LOSSES_AMT', blank=True,
+                                             null=True)  # Field name made lowercase.
+    agency_id = models.IntegerField(db_column='AGENCY_ID', blank=True, null=True)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.agency_id
+
+
+class Year(models.Model):
+    prd_ernd_prem_amt = models.FloatField(db_column='PRD_ERND_PREM_AMT', blank=True,
+                                          null=True)  # Field name made lowercase.
+    prd_incrd_losses_amt = models.FloatField(db_column='PRD_INCRD_LOSSES_AMT', blank=True,
+                                             null=True)  # Field name made lowercase.
+    stat_profile_date_year = models.IntegerField(db_column='STAT_PROFILE_DATE_YEAR', blank=True,
+                                                 null=True)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.stat_profile_date_year
