@@ -21,6 +21,10 @@ from data_project.core import views
 
 router = routers.DefaultRouter()
 router.register(r'insurance', views.InsuranceViewSet)
+router.register(r'summarize_by_months', views.MonthsViewSet)
+router.register(r'summarize_by_year', views.YearViewSet)
+router.register(r'summarize_by_agencyid', views.AgencyIdViewSet)
+router.register(r'summarize_by_state', views.StateViewSet)
 
 urlpatterns = [
 
