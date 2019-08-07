@@ -18,7 +18,7 @@ def create_sql():
     df.to_sql('core_insurance', conn, if_exists='append', index=False)
 
 
-def months_as_parameter(dataframe):
+def group_by_months(dataframe):
     data = dataframe.drop(
         ['AGENCY_ID', 'STATE_ABBR', 'STAT_PROFILE_DATE_YEAR'], axis=1)
     months = sorted(data['MONTHS'].drop_duplicates().tolist())
@@ -27,7 +27,7 @@ def months_as_parameter(dataframe):
     data.to_sql('core_months', conn, if_exists='append', index=False)
 
 
-def agency_id(dataframe):
+def group_by_agency_id(dataframe):
     data = dataframe.drop(
         ['MONTHS', 'STATE_ABBR', 'STAT_PROFILE_DATE_YEAR'], axis=1)
     ids = data['AGENCY_ID'].drop_duplicates().tolist()
@@ -36,7 +36,7 @@ def agency_id(dataframe):
     data.to_sql('core_agencyid', conn, if_exists='append', index=False)
 
 
-def year(dataframe):
+def group_by_years(dataframe):
     data = dataframe.drop(['MONTHS', 'STATE_ABBR', 'AGENCY_ID'], axis=1)
     years = sorted(data['STAT_PROFILE_DATE_YEAR'].drop_duplicates().tolist())
     data = data.groupby(['STAT_PROFILE_DATE_YEAR']).sum()
@@ -44,7 +44,7 @@ def year(dataframe):
     data.to_sql('core_year', conn, if_exists='append', index=False)
 
 
-def state_abber(dataframe):
+def group_by_state_abber(dataframe):
     data = dataframe.drop(
         ['MONTHS', 'STAT_PROFILE_DATE_YEAR', 'AGENCY_ID'], axis=1)
     state = sorted(data['STATE_ABBR'].drop_duplicates().tolist())
@@ -67,10 +67,10 @@ def run():
                          'PL_BOUND_CT_PLRANK',
                          'PL_QUO_CT_PLRANK', 'PL_BOUND_CT_eQTte', 'PL_QUO_CT_eQTte', 'PL_BOUND_CT_APPLIED',
                          'PL_QUO_CT_APPLIED', 'PL_BOUND_CT_TRANSACTNOW', 'PL_QUO_CT_TRANSACTNOW'], axis=1)
-    months_as_parameter(dataframe)
-    agency_id(dataframe)
-    year(dataframe)
-    state_abber(dataframe)
+    group_by_months(dataframe)
+    group_by_agency_id(dataframe)
+    group_by_years(dataframe)
+    group_by_state_abber(dataframe)
 
 
 if '__main__' == __name__:
