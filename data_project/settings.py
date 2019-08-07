@@ -24,7 +24,7 @@ SECRET_KEY = '@#28qeau-7(n!z*hv$%m%c)c+*c8w9+&z1)#)7d0ckobe4=)i0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['britecoretest.ibwmngzn52.us-west-2.elasticbeanstalk.com']
 
 # Application definition
 
