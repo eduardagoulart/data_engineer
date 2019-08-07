@@ -2,3 +2,7 @@
 __pycache__/
 *.sqlite3
 .myenv/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
