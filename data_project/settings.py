@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'data_project.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'finalapi',
@@ -83,11 +83,13 @@ WSGI_APPLICATION = 'data_project.wsgi.application'
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}'''
+}
+'''
 
 DATABASES = {
     'default': config('DATABASE_URL', cast=dburl)
 }
+'''
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
