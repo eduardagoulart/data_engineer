@@ -32,7 +32,7 @@ class StateViewSet(viewsets.ModelViewSet):
     serializer_class = StateSerializer
 
 
-class PurchaseList(generics.ListAPIView):
+class SearchList(generics.ListAPIView):
     serializer_class = InsuranceSerializer
 
     def get_queryset(self):
@@ -46,13 +46,13 @@ class PurchaseList(generics.ListAPIView):
                 queryset = queryset.filter(state_abbr=generic_request)
             elif list(self.request.query_params.keys())[0] == 'agency_id':
                 queryset = queryset.filter(agency_id=generic_request)
-            elif list(self.request.query_params.keys())[0] == 'stat_profile_date_year':
+            elif list(self.request.query_params.keys())[0] == 'year':
                 queryset = queryset.filter(stat_profile_date_year=generic_request)
 
         return queryset
 
 
-class TimeSeriesView(PandasView):
+class ReportDataView(PandasView):
     queryset = Insurance.objects.all()
 
     def filter_queryset(self, queryset):
