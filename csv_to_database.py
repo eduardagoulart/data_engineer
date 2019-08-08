@@ -1,10 +1,9 @@
-import sqlite3
 import pandas as pd
+from sqlalchemy import create_engine
 
 df = pd.read_csv('finalapi.csv')
-conn = sqlite3.connect('finalapi.sqlite3')
-c = conn.cursor()
-print(c)
+engine = create_engine('postgresql://eduarda:britetest@localhost:5432/finalapi')
+conn = engine.connect()
 
 
 def check_nan(query):
@@ -16,6 +15,9 @@ def create_sql():
         df.fillna(0)
 
     df.to_sql('core_insurance', conn, if_exists='append', index=False)
+
+
+create_sql()
 
 
 def group_by_months(dataframe):
