@@ -2,7 +2,7 @@
 
 ### Run filtering query
 
-http://127.0.0.1:8000/purshcase/?my_query=12
+http://127.0.0.1:8000/search/?my_query=12
 
 ##### Avaliable querys 
   - months, 
