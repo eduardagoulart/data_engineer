@@ -81,8 +81,6 @@ DATABASES = {
         'NAME': 'finalapi',
         'USER': 'eduarda',
         'PASSWORD': 'britetest',
-        'HOST': 'localhost',
-        'PORT': '5432',
     }
 }
 
