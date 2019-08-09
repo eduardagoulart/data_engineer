@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'data_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'finalapi',
-        'USER': 'eduarda',
-        'PASSWORD': 'britetest',
+        'NAME': 'dataproject',
+        'USER': 'eduardagoulart',
+        'PASSWORD': 'dataadmin',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
