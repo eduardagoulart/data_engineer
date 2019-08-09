@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'api',
         'USER': 'eduardatest',
         'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        'HOST': '52.33.34.210',
         'PORT': '5432',
     }
 }
