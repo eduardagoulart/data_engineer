@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'dataproject',
         'USER': 'eduardagoulart',
         'PASSWORD': 'dataadmin',
-        'HOST': '127.0.0.1',
+        'HOST': 'aa4zw2kftd628a.cbwmm1jpz8b7.us-west-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
