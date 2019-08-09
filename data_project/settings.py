@@ -26,7 +26,7 @@ SECRET_KEY = '65r4263udhduihsadeew3%$#%FSDFsdfser3'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DEBUG', default=False, cast=bool)
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'britetest.kd3kfq2c7p.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'britecoreproject.xnm6eb7mad.us-west-2.elasticbeanstalk.com']
 
 # Application definition
 
