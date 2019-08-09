@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = '65r4263udhduihsadeew3%$#%FSDFsdfser3'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
-
+# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'britetest.kd3kfq2c7p.us-west-2.elasticbeanstalk.com']
 
 # Application definition
@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'data_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'api',
-        'USER': 'eduardatest',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'finalapi.sqlite3',
     }
 }
 
