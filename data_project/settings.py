@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'api',
         'USER': 'eduardatest',
         'PASSWORD': 'admin',
-        'HOST': 'aa4zw2kftd628a.cbwmm1jpz8b7.us-west-2.rds.amazonaws.com',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
