@@ -1,4 +1,4 @@
-[19:48, 10/8/2019] Vini: # The API
+# The API
 This API was designed with the goal of allowing users to easily search and extract information 
 from the Fake Insurance company dataset: this dataset was taken from Kaggle. 
 The API was implemented in Python3 and uses the following frameworks/libraries: 
@@ -70,3 +70,5 @@ the resulting dataframe is turned into a CSV file (i.e., exported as a CSV file)
 <em>It is worth mentioning that, for some reason, this part of the API currently 
 only runs properly in local host</em>
 ```
+
+The application is available at: http://britecoreproject.xnm6eb7mad.us-west-2.elasticbeanstalk.com/
