@@ -24,7 +24,7 @@ Implementation: This part of the API performs a simple query on all database.
 As a result, four tables are generated. These tables are populated by running python3 csv_to_dabase.py. 
 The first table contains information about the Company. 
 The other tables group information in terms of 
-<em>month</em>, <em>year</em>, <em>agency id</em>, or <em>state</em>.
+month, year, agency id, or state.
 ```
 
 ![API initial screen](api_first.png)
@@ -67,8 +67,8 @@ I filter a queryset using the specified value from url. After this, all
 unused fields are dropped from the resulting dataframe. 
 Lastly, 
 the resulting dataframe is turned into a CSV file (i.e., exported as a CSV file). 
-<em>It is worth mentioning that, for some reason, this part of the API currently 
-only runs properly in local host</em>
+It is worth mentioning that, for some reason, this part of the API currently 
+only runs properly in local host
 ```
 
 The application is available at: http://britecoreproject.xnm6eb7mad.us-west-2.elasticbeanstalk.com/
