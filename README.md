@@ -20,7 +20,7 @@ It is possible to obtain different summarized views that group all insurance inf
 according to a given <em>month</em>, <em>year</em>, <em>agency id</em>, or <em>state</em>.
 
 ```
-<strong>Implementation:</strong> This part of the API performs a simple query on all database.
+Implementation: This part of the API performs a simple query on all database.
 As a result, four tables are generated. These tables are populated by running python3 csv_to_dabase.py. 
 The first table contains information about the Company. 
 The other tables group information in terms of 
@@ -44,7 +44,7 @@ it is also possible to run queries involving the fields below:
     - year
 
 ```
-<strong>Implementation:</strong> To implement this method I take the 
+Implementation: To implement this method I take the 
 request string (in the URL), 
 and filter all database info so that 
 the query returns all information that matches the request string/query. 
@@ -61,7 +61,7 @@ a report containing everything that took place in 2009 will be downloaded as a C
 http://127.0.0.1:8000/report/?data=year  
 
 ```
-<strong>Implementation:</strong> This part was implemented using Django 
+Implementation: This part was implemented using Django 
 Rest and the Pandas framework. 
 I filter a queryset using the specified value from url. After this, all 
 unused fields are dropped from the resulting dataframe. 
